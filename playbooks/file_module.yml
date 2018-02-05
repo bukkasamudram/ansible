@@ -1,0 +1,14 @@
+---
+- hosts: local
+  tasks:
+    - name: create file if does not exists
+      file:
+        path: ~/.bash_profile
+        state: touch
+
+    - name: Add line if does not exists
+      lineinfile:
+        state: present
+        path: ~/.bash_profile
+        line: distribution=RedHat
+

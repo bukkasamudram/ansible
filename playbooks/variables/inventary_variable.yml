@@ -1,0 +1,10 @@
+---
+- hosts: app
+  tasks:
+   - name: printing worker1 variable from hosts file
+     debug: msg="varible= {{ type }}"
+- hosts: db
+  tasks:
+   - name: printing worker2's variable from hosts file
+     debug: msg="variable= {{ type_db }}"
+

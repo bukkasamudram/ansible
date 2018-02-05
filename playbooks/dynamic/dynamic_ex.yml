@@ -1,0 +1,6 @@
+--- # Before running this you must export below environment variables to connect to your AWS account.
+#export AWS_ACCESS_KEY_ID='AK123'
+#export AWS_SECRET_ACCESS_KEY='abc123'
+- hosts: all
+  tasks:
+    - ping:

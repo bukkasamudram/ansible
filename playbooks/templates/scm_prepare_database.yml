@@ -1,0 +1,13 @@
+---
+- hosts: local
+  name: This playbook replaces the database details in the template and copies to the cloudera manager configuration.
+  vars:
+    dbtype: mysql
+    dbname: cm
+    username: cm
+    password: admin@123
+  tasks:
+    - name: replace the db details and copy to CM configuration
+      template: src=cloudera_manager_db_properties.j2 dest=/tmp/db.properties
+
+

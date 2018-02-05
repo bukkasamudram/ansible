@@ -1,0 +1,8 @@
+---
+- hosts: local
+  tasks:
+    - name: add property to bash_profile
+      lineinfile:
+        path: ~/.bash_profile
+        regexp: ^distribution=
+        line: distribution=RedHat

@@ -1,0 +1,7 @@
+---
+- hosts: worker1
+
+  tasks:
+  - name: copying file to worker node
+    copy: src=/etc/ansible/host dest=/home/ec2-user
+

@@ -1,0 +1,5 @@
+---
+- hosts: app
+  tasks:
+   - name: Printing host vars from host_vars folder
+     debug: msg="variable is {{ host }}"

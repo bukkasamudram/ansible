@@ -1,0 +1,12 @@
+---
+- hosts: all
+  vars:
+   var_proxy:
+    http_proxy: http://example-proxy:80/
+    https_proxy: https://example-proxy:443/
+  tasks:
+  - name: Adding env variable
+    lineinfile: path=/etc/environment regexp=^CITY= line=CITY=MUMBAI
+  - shell: 'source ~/.bash_profile && echo $CITY'
+    register: city
+  - debug: msg="System {{ inventory_hostname }} an CITY is {{ city.stdout }}"

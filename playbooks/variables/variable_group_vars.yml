@@ -1,0 +1,6 @@
+---
+- hosts: db
+  tasks:
+   - name: printing variable from group_vars folder
+     debug: msg="variable is {{ group }}"
+     debug: var=ansible_eth0

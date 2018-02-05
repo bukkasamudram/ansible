@@ -1,0 +1,15 @@
+--- # This playbook includes usage of register, command, debug modules.
+- hosts: local
+  tasks:
+    - name: printing some test and storing it in variable using register
+      command: echo "Hellow World"
+      register: result
+
+    - debug:
+        msg: "stdout message is: {{ result.stdout }}"
+    - debug:
+        msg: "stderr message is: {{ result.stderr }}"
+    - debug:
+        msg: "Full result is: {{ result }}"
+    - debug:
+        var: result

@@ -1,0 +1,7 @@
+--- # Example playbook to load variable files based on ansible_os_family from facts. apache_RedHat.yml and apache_Default.yml files are created for this example.
+- hosts: app
+  vars_files:
+   - [ "apache_{{ ansible_os_family }}.yml", "apache_Default.yml" ]
+  tasks:
+   - debug: msg="apache is {{ ansible_os_family }}"
+   - service: name={{ apache }} state=started

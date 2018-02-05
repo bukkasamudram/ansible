@@ -1,0 +1,15 @@
+---
+- hosts: all
+  max_fail_percentage: 30 # The playbook rund till the maximum number of failres reach 30 percentage out of all host involved in the playbook.
+  serial: 2
+# serial: "30%" The serial defines how many forks to run in parallel. This can be mention in percentages also.
+# serial:
+#   - 1
+#   - 2
+#   - 3
+# serial:
+#   - 1
+#   - 2
+#   - "30%"
+  tasks:
+    - command: hostname

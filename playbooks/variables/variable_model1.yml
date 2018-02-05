@@ -1,0 +1,7 @@
+--- # This is to test variable defined in invetory file hosts.
+- hosts: db
+  tasks:
+    - debug: 
+        msg: "playbook var is {{ CITY }}"
+    - debug: 
+        msg: "{{ inventary_hostname }}"

@@ -1,0 +1,8 @@
+---
+- hosts: local
+  gather_facts: yes
+  connection: ssh
+  tasks:
+   - name: Collect local facts from facts.d folder and print
+     debug: 
+       msg: "local facts are {{ ansible_local.localfacts }}"

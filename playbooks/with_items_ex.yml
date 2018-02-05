@@ -1,0 +1,12 @@
+---
+- hosts: all
+  tasks:
+  - name: Install apache
+    yum: name={{ item }} state=installed
+    with_items:
+    - httpd
+    - httpd-devel
+  - name: make sure apache is running
+    service: name=httpd state=started enabled=yes
+  - name: printing few facts
+    debug: "{{ ansible_memtotal_mb }}"

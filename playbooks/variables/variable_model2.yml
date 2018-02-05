@@ -1,0 +1,11 @@
+--- # This yaml explains how to use variables defined under for each host under a group. Group name called hostvars is created in hosts inventory file for this excercise.
+
+- hosts: hostvars
+  tasks:
+    - name: check free memory
+      stat:
+        path: /var/log/messages
+      register: stat
+
+    - debug:
+        msg: "{{ stat }}"

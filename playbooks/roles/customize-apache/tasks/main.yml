@@ -1,0 +1,12 @@
+---
+# tasks file for customize-apache
+
+- name: Create the index.html if does not exists
+  file: state=touch path=/var/www/html/index.html
+
+- name: update the index.html if empty
+  lineinfile:
+    state: present
+    path: /var/www/html/index.html
+    regexp: ^Hostname=
+    line: Hostname={{ ansible_hostname }}

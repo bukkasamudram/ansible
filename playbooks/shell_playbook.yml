@@ -1,0 +1,13 @@
+---
+- hosts: local
+  gather_facts: yes
+  name: Retriving system uptime and printing using debug module
+  tasks:
+    - name: geting system uptime
+      shell: /usr/bin/uptime
+      register: result
+
+    - debug: 
+        msg: "System has started at {{ result.start }}"
+    - debug:
+        var: result

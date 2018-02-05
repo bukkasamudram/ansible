@@ -1,0 +1,23 @@
+worker1
+
+[local]
+localhost
+
+[app]
+worker1 type=centos_1
+
+[db]
+worker2 type_db=centos_2
+
+[multi:children]
+app
+db
+
+[hostvars]
+worker2 ansible_connection=local ansible_user=root type_db=centos_2
+
+[app:vars]
+type=group_vars
+
+CITY= CHENNAI
+
